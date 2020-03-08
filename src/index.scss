@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url("./assets/images/body_bg.jpg");
+  background-size: cover;
+  font-family: 'Microsoft YaHei UI';
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .title {
+    h4 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .current-side {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin-right: 6px;
+    }
+
+    button {
+      border-style: none;
+      padding: 0;
+      outline: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background-size: cover;
+
+      &.black {
+        background-image: url("./assets/images/black_bg.png");
+      }
+
+      &.white {
+        background-image: url("./assets/images/white_bg.png");
+      }
+    }
+  }
+
+  .board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("./assets/images/board_bg.jpg");
+    background-size: cover;
+    box-sizing: border-box;
+    box-shadow: 1px 3px 2px #aaa;
+    border-radius: 8px;
+    margin-top: 10px;
+
+    .chess-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .chess {
+        border-style: none;
+        outline: 0;
+        background-size: cover;
+        padding: 0;
+        background-color: transparent;
+
+        &.black-chess {
+          background-image: url("./assets/images/black_bg.png");
+        }
+
+        &.white-chess {
+          background-image: url("./assets/images/white_bg.png");
+        }
+      }
+    }
+  }
+
+  .btns {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+
+    button {
+      font-size: 16px;
+      padding: 10px 15px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      background-image: linear-gradient(#eee, #ddd);
+    }
+  }
+}
