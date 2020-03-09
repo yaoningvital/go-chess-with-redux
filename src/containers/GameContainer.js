@@ -1,7 +1,7 @@
 import Game from '../components/Game'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { addHistory, popHistory, } from '../actions'
+import { addHistory, clearHistory, popHistory, setWinner, } from '../actions'
 
 const mapStateToProps = state => ({
   history: state.history,
@@ -11,10 +11,17 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleClickChessWrap: ([rowIndex, columnIndex], history, winner) => handleClickChessWrap(dispatch, [rowIndex, columnIndex], history, winner,),
   goBack: () => handleGoBack(dispatch),
+  replay: () => handleReplay(dispatch),
 })
+
+function handleReplay (dispatch) {
+  dispatch(clearHistory())
+  dispatch(setWinner(null))
+}
 
 function handleGoBack (dispatch) {
   dispatch(popHistory())
+  dispatch(setWinner(null))
 }
 
 function handleClickChessWrap (dispatch, [rowIndex, columnIndex], history, winner,) {

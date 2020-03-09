@@ -30,6 +30,11 @@ function Board (props) {
                        index={[rowIndex, columnIndex]}
                        chessWidth={chessWidth}
                 />
+                { history[history.length - 1].latestChessIndex &&
+                  history[history.length - 1].latestChessIndex[0] === rowIndex &&
+                  history[history.length - 1].latestChessIndex[1] === columnIndex &&
+                  <div className="red-dot"/>
+                }
               </div>
             )
           })

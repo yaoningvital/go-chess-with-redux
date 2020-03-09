@@ -2,7 +2,7 @@ import React from 'react'
 import Board from './Board'
 
 function Game (props) {
-  let {history, handleClickChessWrap, winner,goBack,} = props
+  let {history, handleClickChessWrap, winner,goBack,replay,} = props
   let boardWidth = document.documentElement.clientWidth * 0.95
   let chessWrapWidth = 40 * boardWidth / 790
   let chessWidth = chessWrapWidth * 0.9
@@ -38,7 +38,7 @@ function Game (props) {
       {/*  按钮区*/}
       <div className="btns">
         <button onClick={goBack}>返回上一步</button>
-        <button>重玩</button>
+        <button onClick={replay}>重玩</button>
       </div>
     </div>
   )
